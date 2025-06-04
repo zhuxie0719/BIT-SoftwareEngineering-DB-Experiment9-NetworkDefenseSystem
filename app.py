@@ -9,9 +9,6 @@ app.register_blueprint(team1_bp)
 app.register_blueprint(team2_bp)
 app.register_blueprint(team3_bp)
 
-@app.route('/')
-def home():
-    return "你好"
 
 if __name__ == "__main__":
     app.run(debug=True)
