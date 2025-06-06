@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<div class="sidebar">
+        <div class="sidebar-header">学生信息</div>
+        <ul class="sidebar-menu">
+            <li class="menu-item">在读学生信息 </li>
+            <li class="menu-item">毕业学生信息</li>
+        </ul>
+</div>
+
+<div class="main-content">
+    <h3>学生名录</h3>
+    <hr class="sep-line">
+
+
+    <div class="student-information">
+        <div class="photo-info">
+            <img class="photo-card" src="../../static/images/teacherExample.jpg">
+            <p>{{ student_info.program_type }}</p>
+            <span>年级：</span>
+            <span>{{student_info.grade}}</span>
+            <div class="vr"></div>
+        </div>
+        
+        <div clas="info-part">
+            
+            <h3 class="card-text">学号</h3>
+            <p class="content-text">{{ student_info.student_id }}</p>
+            <h3 class="card-text">姓名</h3>
+            <p class="content-text"> {{ student_info.name }} </p>
+      
+            <h3 class="card-text">导师</h3>
+            <p class="content-text"> {{ student_info.supervisor }}</p>
+
+            <h3 class="card-text">入学时间</h3>
+            <p class="content-text"> {{ student_info.enrollment_date }}</p>
+
+            <h3 class="card-text">毕业时间</h3>
+            <p class="content-text"> {{ student_info.graduation_date }}</p>
+        </div>
+    </div>
+
+     
+</div>
+{% endblock %}
