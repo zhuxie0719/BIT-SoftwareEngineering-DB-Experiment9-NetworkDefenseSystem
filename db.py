@@ -1,5 +1,5 @@
 import psycopg2
-import config import DB_CONFIG
+from config import DB_CONFIG
 
 def get_db_connection():
     try:
