@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<div class="sidebar">
+        <div class="sidebar-header">师资队伍</div>
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                
+                全职教师
+                
+            </li>
+            <li class="menu-item">
+                
+                兼职教师
+                
+            </li>
+        </ul>
+</div>
+
+<div class="main-content">
+    <h3>兼职教师</h3>
+    <hr class="sep-line">
+
+    {% for teacher in teacherInfo %} 
+        <div class="teacher-card">
+            <img class="teacher-photo" src="../static/images/teacherExample.jpg">
+            <div class="teacher-information">
+                <h3>{{ teacher.name }}</h3>
+                <span>学院:</span>
+                <span>{{ teacher.college }}</span>
+                <br>
+                <span>学历:</span>
+                <span>{{ teacher.degree_level }}</span>
+                <br>
+                <hr class="teacher-line">
+            </div>
+        </div>
+    {% endfor %}
+    
+{% endblock %}
