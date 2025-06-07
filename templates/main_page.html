@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/team1.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/bit_logo.png') }}" class="school-logo">
+        </div>
+
+        <div class="menu-container">
+            <div class="option-container">
+            </div>
+
+            <div class="menu">
+                <ul class="nav">
+                    <li><a href="#">首页</a></li>
+                    <li>
+                        <a>关于我们</a>
+                        <ul>
+                            <li><a href="#">研究所简介</a></li>
+                            <li>
+                                <a>师资队伍</a>
+                                <ul>
+                                    <li><a href="{{ url_for('team1.page1') }}">全职教师</a></li>
+                                    <li><a href="{{ url_for('team1.page2') }}">兼职教师</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">学生信息</a>
+                                <ul>
+                                    <li><a href="{{ url_for('team1.page3') }}">在读学生</a></li>
+                                    <li><a href="{{ url_for('team1.page5') }}">毕业学生</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">联系我们</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">动态消息</a>
+                        <ul>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">通知通告</a></li>
+                            <li><a href="#">学术活动</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>教学科研</a>
+                        <ul>
+                            <li><a href="{{ url_for('team1.page7') }}">教学工作</a></li>
+                            <li><a href="{{ url_for('team1.page8') }}">科研工作</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">研究成果</a>
+                        <ul>
+                            <li>
+                                <a href="#">教学</a>
+                                <ul>
+                                    <li><a href="{{ url_for('team1.page9') }}">成果</a></li>
+                                    <li><a href="{{ url_for('team1.page10') }}">论文</a></li>
+                                    <li><a href="{{ url_for('team1.page11') }}">教材</a></li>
+                                    <li><a href="{{ url_for('team1.page12') }}">教改</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">科研</a>
+                                <ul>
+                                    <li><a href="#">成果</a></li>
+                                    <li><a href="#">论文</a></li>
+                                    <li><a href="#">专利</a></li>
+                                    <li><a href="#">著作权</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">招生信息</a>
+                        <ul>
+                            <li><a href="#">本科生</a></li>
+                            <li><a href="#">硕士生</a></li>
+                            <li><a href="#">博士生</a></li>
+                            <li><a href="#">留学生</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('team1.page13') }}">国际合作</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner-container"></div>
+    
+
+    <div class="presentation-container">
+        <div class="presentation-card">
+            <div class="presentation-title">研究方向</div> 
+            <p class="presentation-content">
+                «Sed ut perspiciatis unde omnis iste natus error 
+                sit voluptatem accusantium doloremque laudantium, 
+                totam rem aperiam eaque ipsa, quae ab illo inventore 
+                veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 
+                aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem 
+                sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor    
+            </p>        
+        </div>
+        <div class="presentation-card">
+            <div class="presentation-title">学术性质</div> 
+            <p class="presentation-content">
+                «Sed ut perspiciatis unde omnis iste natus error 
+                sit voluptatem accusantium doloremque laudantium, 
+                totam rem aperiam eaque ipsa, quae ab illo inventore 
+                veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 
+                aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem 
+                sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor    
+            </p>        
+        </div>
+        <div class="presentation-card">
+            <div class="presentation-title">学术严谨性</div> 
+            <p class="presentation-content">
+                «Sed ut perspiciatis unde omnis iste natus error 
+                sit voluptatem accusantium doloremque laudantium, 
+                totam rem aperiam eaque ipsa, quae ab illo inventore 
+                veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 
+                aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem 
+                sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor    
+            </p>        
+        </div>
+    </div>
+
+
+    <!-- 视频 -->
+    <div class="video-container">
+        <div class="news-topic">
+            <span>join us</span>
+            <div class="news-title">视频传播</div>
+            <div class="under_line_1"></div>
+        </div>
+
+        <video class="presentation-video" controls>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+    </div>
+
+    <!-- 新闻 -->
+     <div class="news-container">
+        <div class="news-card">
+            <div class="news-topic">
+                <span>news</span>
+                <div class="news-title">新闻动态</div>
+                <div class="under_line_1"></div>
+            </div>
+
+            <div class="news">
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-topic">
+                <span>notice</span>
+                <div class="news-title">通知通告</div>
+                <div class="under_line_1"></div>
+            </div>
+
+            <div class="news">
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <div class="news-topic">
+                <span>events</span>
+                <div class="news-title">学术活动</div>
+                <div class="under_line_1"></div>
+            </div>
+
+            <div class="news">
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+
+                <div class="actual-news">
+                    <div class="day-card">
+                         <div class="day">26</div>
+                        <div class="day_month">2024.12.10</div>
+                    </div>
+                    <div>
+                        <div class="news-text">【国际会议】计算机视觉国际会议预报名通知</div>
+                        <div>将于2025年3月在上海举行，现已开放早鸟注册。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     </div>
+
+    <div class="links">
+        <span class="link"><a href="http://cs.bit.edu.cn">计算机学院</a></span>
+        <span class="link"><a href="http://grd.bit.edu.c">研究生院 </a></span>
+        <span class="link"><a href="http://grdms.bit.edu.cn">研究生管理系统</a></span>
+    </div>
+    
+    <footer>
+        <p>© db_7 | 北京理工大学研究所网站前端展示系统</p>
+    </footer>
+</body>
+</html>
+
