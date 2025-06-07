@@ -113,3 +113,12 @@ header {
     background-color: #208fda;
     bottom: 0;
 }
+
+footer{
+    background-color: hsl(241, 51%, 48%);
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

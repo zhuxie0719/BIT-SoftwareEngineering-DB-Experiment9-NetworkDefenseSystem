@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究所图书馆借阅系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/library.css') }}">
+</head>
+<body>
+     <!-- 研究所导航栏 -->
+      <header>
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='images/bit_logo.png') }}" class="school-logo">
+            </div>
+
+            <div class="menu-container">
+                <div class="option-container">
+
+                </div>
+
+                <div class="menu">
+                    <ul class="nav">
+                    <li><a href="#">首页</a></li>
+                    <li>
+                        <a>关于我们</a>
+                        <ul>
+                        <li><a href="#">研究所简介</a></li>
+                        <li>
+                            <a>师资队伍</a>
+                            <ul>
+                            <li><a href="{{ url_for('team1.page1') }}">全职教师</a></li>
+                            <li><a href="{{ url_for('team1.page2') }}">兼职教师</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">学生信息</a>
+                            <ul>
+                            <li><a href="{{ url_for('team1.page3') }}">在读学生</a></li>
+                            <li><a href="{{ url_for('team1.page5') }}">毕业学生</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">联系我们</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">动态消息</a>
+                        <ul>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">通知通告</a></li>
+                        <li><a href="#">学术活动</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>教学科研</a>
+                        <ul>
+                        <li><a href="{{ url_for('team1.page7') }}">教学工作</a></li>
+                        <li><a href="{{ url_for('team1.page8') }}">科研工作</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">研究成果</a>
+                        <ul>
+                        <li>
+                            <a href="#">教学</a>
+                            <ul>
+                            <li><a href="{{ url_for('team1.page9') }}">成果</a></li>
+                            <li><a href="{{ url_for('team1.page10') }}">论文</a></li>
+                            <li><a href="{{ url_for('team1.page11') }}">教材</a></li>
+                            <li><a href="{{ url_for('team1.page12') }}">教改</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">科研</a>
+                            <ul>
+                            <li><a href="#">成果</a></li>
+                            <li><a href="#">论文</a></li>
+                            <li><a href="#">专利</a></li>
+                            <li><a href="#">著作权</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">招生信息</a>
+                        <ul>
+                        <li><a href="#">本科生</a></li>
+                        <li><a href="#">硕士生</a></li>
+                        <li><a href="#">博士生</a></li>
+                        <li><a href="#">留学生</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('team1.page13') }}">国际合作</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+     <div class="banner-container"></div>
+    <!-- 图书借阅系统内容 -->
+    <div class="content-area">
+        <h1 class="page-title">研究所图书馆借阅系统</h1>
+
+        <!-- 用户信息面板 -->
+        <div class="user-panel">
+            <div class="user-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="user-info">
+                <h3 id="user-name">姓名</h3>
+                   <p id="user-id">学号/工号</p>
+                       <div class="user-stats">
+                           <div class="stat-item1">
+                          <div class="stat-value" id="borrow-count">0</div>
+                           <div class="stat-label">借阅记录</div>
+                           </div>
+                    <a href="#" id="view-records" class="stat-item2" style="cursor: pointer;">
+                         <div class="stat-value"><i class="fas fa-history"></i></div>
+                         <div class="stat-label">查看记录</div>
+                     </a>
+
+                    <h2>
+                     <a href="#" id="back_toSearch" class="stat-item3" style="cursor: pointer;">
+                         <div class="stat-value"><i class="fas fa-arrow-left"></i></div>
+                         <div class="stat-label">返回搜索</div>
+                     </a>
+                    </h2>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="library-container">
+            <div class="book-search">
+                <h2 class="section-title"><i class="fas fa-search"></i>图书检索</h2>
+                <form id="search-form">
+                <div class="search-form">
+                        <input type="text" class="search-input" placeholder="输入书名或编号检索...">
+                    <button class="search-btn">搜索</button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="book-list">
+                <h2 class="section-title">热门图书推荐</h2>
+                <div class="book-grid">
+                    <!-- 图书卡片 1 -->
+                    <div class="book-card">
+                        <div class="book-cover">深度学习与人工智能</div>
+                        <div class="book-info">
+                            <div class="book-title">深度学习原理与实践</div>
+                            <div class="book-meta">
+                                <span class="book-id">图书编号 B115</span>
+                                <span class="status-available">可借阅</span>
+                            </div>
+                            <button class="borrow-btn">借阅图书</button>
+                        </div>
+                    </div>
+
+                    <!-- 图书卡片 2 -->
+                    <div class="book-card">
+                        <div class="book-cover">量子计算导论</div>
+                        <div class="book-info">
+                            <div class="book-title">量子计算：从基础到应用</div>
+                            <div class="book-meta">
+                                <span class="book-id">图书编号 B115</span>
+                                <span class="status-available">可借阅</span>
+                            </div>
+                            <button class="borrow-btn">借阅图书</button>
+                        </div>
+                    </div>
+                    <!-- 图书卡片 1 -->
+                    <div class="book-card">
+                        <div class="book-cover">深度学习与人工智能</div>
+                        <div class="book-info">
+                            <div class="book-title">深度学习原理与实践</div>
+                            <div class="book-meta">
+                                 <span class="book-id">图书编号 B115</span>
+                                <span class="status-available">可借阅</span>
+                            </div>
+                            <button class="borrow-btn">借阅图书</button>
+                        </div>
+                    </div>
+                    <!-- 图书卡片 1 -->
+                    <div class="book-card">
+                        <div class="book-cover">深度学习与人工智能</div>
+                        <div class="book-info">
+                            <div class="book-title">深度学习原理与实践</div>
+                            <div class="book-meta">
+                                <span class="book-id">图书编号 B115</span>
+                                <span class="status-available">可借阅</span>
+                            </div>
+                            <button class="borrow-btn">借阅图书</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="content-section">
+                <!-- 借阅记录 -->
+                <div class="record-container" id="borrowRecords">
+                    <h2 class="section-title">
+                        <i class="fas fa-book"></i>借阅记录
+                    </h2>
+                    <table class="record-list">
+                        <thead>
+                            <tr>
+                                <th>书名</th>
+                                <th>借阅日期</th>
+                                <th>应还日期</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="borrowRecordsBody">
+        <!-- 动态内容将通过JavaScript填充 -->
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- 搜索结果 -->
+                <div class="search-results" id="searchResults">
+                    <h2 class="section-title">
+                        <i class="fas fa-books"></i>搜索结果
+                    </h2>
+                    <div class="hot-books" id="resultsContainer">
+                        <!-- 搜索结果将通过JavaScript动态生成 -->
+                    </div>
+                </div>
+            </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // 为搜索表单添加ID
+        $('.search-form').attr('id', 'search-form');
+
+        // 处理搜索表单提交
+        $(document).ready(function () {
+            // 直接使用表单ID绑定事件
+            $('#search-form').on('submit', function (e) {
+                e.preventDefault();
+                console.log("搜索表单已提交");
+                searchBooks();
+            });
+        });
+        function fetchUserData() {
+        $.ajax({
+            url: '{{ url_for("team2.page5") }}',
+            type: 'GET',
+            success: function(data) {
+                if (data.error) {
+                    console.error(data.error);
+                    return;
+                }
+
+                // 更新用户信息
+                $('#user-name').text(sessionStorage.getItem('user_name') || '用户');
+                $('#user-id').text(sessionStorage.getItem('user_id') || '未登录');
+                $('#borrow-count').text(data.total);
+
+                // 更新借阅记录表格
+                const tbody = $('#borrowRecordsBody');
+                tbody.empty();
+
+                if (data.records.length === 0) {
+                    tbody.append('<tr><td colspan="4">暂无借阅记录</td></tr>');
+                    return;
+                }
+
+                data.records.forEach(record => {
+                    const statusClass = record.status === '已归还' ? 'status-returned' :
+                                      record.status === '逾期' ? 'status-overdue' : 'status-borrowing';
+
+                    const row = `
+                    <tr>
+                        <td>${record.title}</td>
+                        <td>${record.borrow_date}</td>
+                        <td>${record.due_date}</td>
+                        <td><span class="status-badge ${statusClass}">${record.status}</span></td>
+                    </tr>`;
+                    tbody.append(row);
+                });
+            },
+            error: function() {
+                console.error('获取用户数据失败');
+            }
+        });
+    }
+
+    // 初始化时获取数据
+    fetchUserData();
+
+            // 查看借阅记录
+            $('#view-records').on('click', function () {
+                $('.book-list, .search-results,.stat-item2').hide();
+                $('.library-container').hide();
+                $('.record-container').show();
+                $('.stat-item3').show();
+            });
+
+            // 返回搜索
+            $('#back_toSearch').on('click', function () {
+                $('.book-list, .stat-item2').show();
+                $('.library-container').show();
+                $('.search-results,.record-container').hide();
+                $('.stat-item3').hide();
+            });
+
+            // 借阅按钮事件
+            $(document).on('click', '.borrow-btn:not(.disabled)', function () {
+                const bookId = $(this).data('id');
+                borrowBook(bookId, $(this));
+            });
+
+            // 图书搜索函数
+            function searchBooks() {
+                const keyword = $('.search-input').val().trim();
+                console.log("搜索关键词:", keyword); // 添加调试日志
+                if (!keyword) {
+                    alert('请输入搜索关键词');
+                    return;
+                }
+
+                $.ajax({
+                    url: '{{ url_for("team2.page4") }}',
+                    type: 'POST',
+                    data: {keyword: keyword},
+                    dataType: 'json', // 确保声明数据类型
+                    success: function (books) {
+                        displaySearchResults(books);
+                    },
+                    error: function () {
+                        alert('搜索失败，请重试');
+                    }
+                });
+
+                $.ajax({
+                    url: '{{ url_for("team2.page4") }}',
+                    type: 'POST',
+                    data: {keyword: keyword},
+                    success: function (books) {
+                        console.log("收到搜索结果:", books); // 调试日志
+                        displaySearchResults(books);
+                    },
+                    error: function (xhr) {
+                        console.error("搜索请求失败:", xhr.responseText); // 详细错误日志
+                        alert('搜索失败，请重试');
+                    }
+                });
+
+            }
+
+            // 显示搜索结果
+            function displaySearchResults(books) {
+                $('.book-list, .record-container').hide();
+                $('.search-results').show();
+
+                const container = $('#resultsContainer');
+                container.empty();
+
+                if (books.error) {
+                    container.html(`<div class="message-box">${books.error}</div>`);
+                    return;
+                }
+
+                if (books.length === 0) {
+                    container.html('<div class="message-box">没有找到匹配的图书</div>');
+                    return;
+                }
+
+                let html = '<div class="book-grid">';
+
+                books.forEach(function (book) {
+                    const statusClass = book.is_borrowed === 'true' ? 'status-borrowed' : 'status-available';
+                    const statusText = book.is_borrowed === 'true' ? '已借出' : '可借阅';
+                    const buttonClass = book.is_borrowed === 'true' ? 'borrow-btn disabled' : 'borrow-btn';
+                    const buttonText = book.is_borrowed === 'true' ? '不可借' : '借阅';
+                    const disabledAttr = book.is_borrowed === 'true' ? 'disabled' : '';
+
+                    html += `
+            <div class="book-card">
+                <div class="book-cover">${book.title.substring(0, 50)}</div>
+                <div class="book-info">
+                    <div class="book-title">${book.title}</div>
+                    <div class="book-meta">
+                        <span class="book-id">图书编号 ${book.book_id}</span>
+                        <span class="status-available">${statusText}</span>
+                    </div>
+                    <button class="${buttonClass}" ${disabledAttr} data-id="${book.book_id}">
+                        ${buttonText}
+                    </button>
+                </div>
+            </div>
+            `;
+                    /* <!-- 图书卡片 1 -->
+                    <div class="book-card">
+                        <div class="book-cover">深度学习与人工智能</div>
+                        <div class="book-info">
+                            <div class="book-title">深度学习原理与实践</div>
+
+                               <div class="book-meta">
+                                <span>计算机科学</span>
+                                <span class="status-available">可借阅</span>
+                            </div>
+
+                            <button class="borrow-btn">借阅图书</button>
+                        </div>
+                    </div>*/
+                });
+                html += '</div>';
+                container.html(html);
+            }
+
+            // 借阅图书函数
+            function borrowBook(bookId, buttonElement) {
+                const originalText = buttonElement.text();
+                buttonElement.text('处理中...').prop('disabled', true);
+
+                $.ajax({
+                    url: '{{ url_for("team2.page6") }}',
+                    type: 'POST',
+                    data: {book_id: bookId},
+                     success: function(response) {
+            if (response.success) {
+                // 更新按钮状态
+                buttonElement.text('已借出').addClass('disabled');
+
+                // 刷新用户数据和借阅记录
+                fetchUserData();
+
+                // 如果当前显示借阅记录，保持显示
+                if ($('.record-container').is(':visible')) {
+                    $('.book-list, .stat-item2').hide();
+                    $('.library-container').hide();
+                    $('.record-container').show();
+                    $('.stat-item3').show();
+                }
+            }},
+                    error: function () {
+                        alert('请求失败，请重试');
+                        buttonElement.text(originalText).prop('disabled', false);
+                   }
+                });}
+    }); // 修复：添加缺失的结束括号
+    </script>
+</body>
+</html>

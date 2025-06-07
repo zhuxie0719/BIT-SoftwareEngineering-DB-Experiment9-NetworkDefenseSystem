@@ -174,9 +174,9 @@ a{
 
 /* Presentation */
 .presentation-container {
-
-    background-color: #f5f0f0;
-    padding: 25px 420px;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 25px 620px;
 }
 
 .presentation-card{
@@ -201,7 +201,7 @@ a{
 }
 
 .presentation-content{
-    text-align: justify;
+    text-align: center;
 }
 
 .news-topic {
@@ -294,14 +294,7 @@ a{
 }
 
 
-footer{
-    background-color: hsl(241, 51%, 48%);
-    height: 100px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .video-container{
     width: 100%;
