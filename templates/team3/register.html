@@ -168,7 +168,11 @@ document.getElementById('registerForm').onsubmit = async function(e) {
         const loginRes = await fetch('{{ url_for("team3.login") }}', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({username: form.username.value, password: form.password.value})
+            body: JSON.stringify({
+                username: form.username.value,
+                password: form.password.value,
+                user_type: form.user_type.value
+            })
         });
         if (loginRes.ok) {
             window.location.href = "{{ url_for('team3.user_center') }}";

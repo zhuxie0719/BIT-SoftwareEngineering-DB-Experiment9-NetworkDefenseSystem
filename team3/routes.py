@@ -47,6 +47,7 @@ def login():
         if user_type == '学生':
             cur.execute("SELECT grade, category, program_type, supervisor, nationality, is_part_time, is_international, is_suspended, notes FROM user_schema.student WHERE student_id=%s", (username,))
             stu_row = cur.fetchone()
+            print('学生信息:', stu_row)
             if stu_row:
                 session['grade'] = stu_row[0]
                 session['category'] = stu_row[1]
