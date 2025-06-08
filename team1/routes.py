@@ -102,3 +102,4 @@ def page12():
 @team1_bp.route('international_information')
 def page13():
     return render_template('team1/international_information.html')
+
