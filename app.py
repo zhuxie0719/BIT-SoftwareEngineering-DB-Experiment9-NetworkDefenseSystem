@@ -4,6 +4,7 @@ from team2.routes import team2_bp
 from team3.routes import team3_bp
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
 # 首页
 @app.route('/')
