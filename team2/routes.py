@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template
-<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify, session
 from flask import Flask, render_template, request, jsonify, session
 import psycopg2
@@ -141,15 +140,3 @@ def page6():
         cur.close()
         conn.close()
 
-=======
-
-team2_bp = Blueprint('team2', __name__)
-
-@team2_bp.route('/page3')
-def page3():
-    return render_template('page3.html')
-
-@team2_bp.route('/page4')
-def page4():
-    return render_template('page4.html')
->>>>>>> 1faf378cef6a63a7d39706f752d46a00da392057
